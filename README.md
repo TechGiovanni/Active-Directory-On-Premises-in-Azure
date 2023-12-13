@@ -1,10 +1,8 @@
-# Configuring-On-premises-Active-Directory-within-Azure-VMs
-
 <p align="center">
 <img src="https://i.imgur.com/PniAhoV.png" alt="osTicket logo"/>
 </p>
 
-<h1>Azure Installing an Active Directory.</h1>
+# Azure Installing an Active Directory.
 This tutorial outlines how to install an active directory using azure.<br />
 
 
