@@ -10,7 +10,7 @@ This tutorial outlines how to install an active directory using azure.
 <h2>Video Demonstration</h2>
 
 - ### [YouTube: Installing an Active Directory](https://www.youtube.com)
-- ### [Notion: I've Included Documentation of the whole process](https://www.notion.so/Active-Directory-4519124dff2e470e834158552a47a807?pvs=4)
+- ### [Notion: I've Included Documentation of the whole process](https://quill-lunge-517.notion.site/Active-Directory-4519124dff2e470e834158552a47a807?pvs=4)
 
 <h2>Environments and Technologies Used</h2>
 
