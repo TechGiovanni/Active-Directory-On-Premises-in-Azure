@@ -302,6 +302,93 @@ This tutorial outlines how to install an active directory using azure.
 <br>
 
 
+- Perfect!
+
+### Creating 1000 users
+
+- Open powershell_ISE as a administrator
+- We will enable the execution of all scripts
+- type in powershell “Set-ExecutionPolicy Unrestricted”
+- Now we need to change directory into where the name is located
+- we type “cd C:\Users\gioadmin\Desktop”
+- If we type “ls” inside powershell, we should see the user file, that has all the names
+- Then copy the Powershell script code into your powershell
+
+
+Powershell script:
+```
+# ----- Edit these Variables for your own Use Case ----- #
+$PASSWORD_FOR_USERS   = "Password0111"
+$USER_FIRST_LAST_LIST = Get-Content .\names.txt
+# ------------------------------------------------------ #
+
+$password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force
+New-ADOrganizationalUnit -Name _USERS -ProtectedFromAccidentalDeletion $false
+
+foreach ($n in $USER_FIRST_LAST_LIST) {
+    $first = $n.Split(" ")[0].ToLower()
+    $last = $n.Split(" ")[1].ToLower()
+    $username = "$($first.Substring(0,1))$($last)".ToLower()
+    Write-Host "Creating user: $($username)" -BackgroundColor Black -ForegroundColor Cyan
+    
+    New-AdUser -AccountPassword $password `
+               -GivenName $first `
+               -Surname $last `
+               -DisplayName $username `
+               -Name $username `
+               -EmployeeID $username `
+               -PasswordNeverExpires $true `
+               -Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
+               -Enabled $true
+}
+```
+
+- click “enter” and watch the users being created
+
+
+<br>
+<p align="center">
+<img src="https://imgur.com/h8Ynrzj.png"/>
+</p>
+
+<br>
+
+
+- Now Check your users and computers in active directory
+- Refresh
+- You should see the “_Users”
+- then right click and select “Find…”
+
+
+<br>
+<p align="center">
+<img src="https://imgur.com/49xNUWI.png"/>
+</p>
+
+<br>
+
+
+- then select “FInd now”
+
+<br>
+<p align="center">
+<img src="https://imgur.com/lRvnTyF.png"/>
+</p>
+
+<br>
+
+- you now see 1000 items(s) found →
+
+  ##**Meaning 1000 users were created**
+
+So we just basically created a mini, corporate network 
+
+In this next section we will
+
+- Edit the group policy to configure the number of invalid logon attempts before locking the account
+- Attempt to remote desktop into a user account with incorrect details to lock the account
+- We will unlock the account and do a password reset
+- We will attempt to tog in again
 
 
 
