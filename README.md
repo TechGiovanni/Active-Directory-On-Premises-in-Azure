@@ -30,3 +30,34 @@ This tutorial outlines how to install an active directory using azure.
 - Understanding of Windows Ost
 - Understanding how a domain controller interacts with a client.
 - Understanding of the difference between dynamic and static DNS assignments.
+
+<h2>Installation Steps</h2>
+- Create a virtual network
+- create an address space on that virtual network
+
+<p align="center">
+<img src="https://imgur.com/8OxefDk.png"/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
