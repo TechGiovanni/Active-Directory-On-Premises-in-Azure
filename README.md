@@ -35,7 +35,6 @@ This tutorial outlines how to install an active directory using azure.
 
 - Create a virtual network
 - create an address space on that virtual network
-
 <br>
 <p align="center">
 <img src="https://imgur.com/8OxefDk.png"/>
