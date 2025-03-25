@@ -32,6 +32,7 @@ This tutorial outlines how to install an active directory using azure.
 - Understanding of the difference between dynamic and static DNS assignments.
 
 <h2>Installation Steps</h2>
+<br>
 - Create a virtual network
 - create an address space on that virtual network
 
